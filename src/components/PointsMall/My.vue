@@ -54,11 +54,8 @@ vertical-align: middle;text-align: center">
         },
        mounted(){
          var personId = localStorage.getItem('personId');
-          //console.log(personId);
           //获取个人信息
           axios.get('http://wx.baronli.com/api/user/personId/'+personId).then((res)=>{
-            //console.log(res.data);
-           //console.log(res.data['data']['userInfo'].receiverAddress);
            $('.names').html(res.data['data']['userInfo'].name);
            //获取总积分
            localStorage.setItem('sumIntergral',res.data['data']['userInfo'].intergral);
